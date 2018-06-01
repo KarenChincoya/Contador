@@ -28,9 +28,6 @@ public class InstruccionesPnl extends JPanel{
     private JButton btnEnviar;
     private ListenerInstruccionesPnl listener;
     private JLabel lblEspecificaciones;
-    private JLabel lblLimInf;
-    private JTextField txtLimInf;
-    private JLabel lblLimSup;
     private JTextField txtLimSup;
     private JLabel lblFin;
     
@@ -52,20 +49,13 @@ public class InstruccionesPnl extends JPanel{
         JPanel pnlEspecificaciones = new JPanel();
         pnlEspecificaciones.setLayout(new FlowLayout());
         lblEspecificaciones = new JLabel("La velocidad de cada contador "
-                + "es un valor aleatorio entre los segundos que indique: ");
-        lblEspecificaciones.setPreferredSize(new Dimension(600,50));
-        lblLimInf = new JLabel("De ");
-        txtLimInf = new JTextField();
-        txtLimInf.setPreferredSize(new Dimension(40,40));
-        lblLimSup = new JLabel(" a ");
+                + "es un valor aleatorio entre 0 y ");
+        lblEspecificaciones.setPreferredSize(new Dimension(460,50));
         txtLimSup = new JTextField();
         txtLimSup.setPreferredSize(new Dimension(40,40));
         lblFin = new JLabel(" segundos.");
         
         pnlEspecificaciones.add(lblEspecificaciones);
-        pnlEspecificaciones.add(lblLimInf);
-        pnlEspecificaciones.add(txtLimInf);
-        pnlEspecificaciones.add(lblLimSup);
         pnlEspecificaciones.add(txtLimSup);
         pnlEspecificaciones.add(lblFin);
         
@@ -121,6 +111,26 @@ public class InstruccionesPnl extends JPanel{
     public void setBtnEnviar(JButton btnEnviar) {
         this.btnEnviar = btnEnviar;
     }
+
     
+    public JTextField getTxtLimSup() {
+        return txtLimSup;
+    }
+
+    public void setTxtLimSup(JTextField txtLimSup) {
+        this.txtLimSup = txtLimSup;
+    }
+
+    public JLabel getLblFin() {
+        return lblFin;
+    }
+
+    public void setLblFin(JLabel lblFin) {
+        this.lblFin = lblFin;
+    }
     
+    public void reset(){
+        this.txtHilos.setText("");
+        this.txtLimSup.setText("");
+    }
 }
